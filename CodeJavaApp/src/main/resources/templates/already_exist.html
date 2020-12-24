@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>CodeJava</title>
+<link rel = "stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<style>
+.right {
+  position: absolute;
+  right: 200px;
+  width: 200px;
+  border: 1px solid #73AD21;
+  padding: 5px;
+}
+.left {
+  position: absolute;
+  left: 200px;
+  width: 200px;
+  border: 1px solid #73AD21;
+  padding: 5px;
+}
+
+</style>
+</head>
+<body>
+	<div class = "container text-center">
+	 	<div>
+	 	<br>
+	 	<br>
+     		<h2>The E-Mail ID you entered already exists </h2>
+     		<br>
+     		<br>
+     		<h3>Please enter new E-Mail Address to continue </h3>
+    	 </div>
+    	 <br>
+    	 <br>
+    	 <br>
+    	<div>
+    	  <div class = "left" ><button type="button" class="btn btn-link"><h3><a th:href="@{/register}">Register</a></h3></button></div>
+    	 </div>
+    	 <div>
+    		<div class = "right"><button type="button" class="btn btn-link"><h3><a th:href="@{/loginup}">Login</a></h3></button></div>
+   	    </div>
+    
+    
+    
+    
+    
+    </div>
+</body>
+</html>

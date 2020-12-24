@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AppController {
 
+	
+	
 	@Autowired
 	private UserRepository repo;
 	
@@ -26,9 +28,25 @@ public class AppController {
 	}
 	
 	@PostMapping("/process_register")
-	public String processRegistration(User user) {
+	public String processRegistration(Model model, User user) {
+		
+		 User existingUser = repo.findByEmail(user.getEmail());
+		 
+		 if(existingUser != null)
+	        {
+			 return "already_exist";
+	        }
+		 
+		 
 		repo.save(user);
 		return "register_success";
+	}
+	
+	
+	@GetMapping("/Login")
+	public String viewLoginPage() {
+		
+		return "login_page";
 	}
 	
 }
